@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;900&display=swap');
+
+/* CSS VARIABLE */
+:root {
+  --full-black: #000000;
+  --black: #151515;
+  --dark-grey: #181818;
+  --grey: #6DA9E4;
+  --light-grey: #808080;
+  --white: #FFFFFF;
+  --red: #F0F0F0;
+}
+
+/* CSS RESET */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--full-black);
+}
+
+body {
+  background-color: var(--black);
+  max-width: 1300px;
+  margin: 0 auto;
+  
+  height: 100vh;
+  color: var(--white);
+  font-family: 'Outfit', sans-serif;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+
+/* about_section */
+section#about_section {
+  padding-inline: unset;
+  display: flex;
+  gap: 5rem;
+  flex-direction: column;
+  background: linear-gradient(90deg, var(--dark-grey) 0 50%, var(--black) 50% 100%);
+  /* padding-inline: 15rem; */
+}
+
+.roles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+
+  perspective: 500px;
+  
+  height: 100vh;
+  padding-block: 1rem;
+}
+
+.role {
+  position: relative;
+  border-radius: 6px;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  background-color: var(--grey);
+  min-width: 200px;
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.front {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 200px;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.back {
+  padding: 2.5rem 0 2.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  min-width: 200px;
+  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.5s;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transform: translate(100%);
+}
+
+
+.back ul {
+  overflow-y: auto;
+  padding-inline: 0.78rem 2.5rem;
+}
+
+.visible {
+  opacity: 1;
+  transform: translate(0)
+}
+
+.transform {
+  transform: translate(-100%) ;
+  transition: transform 0.5s;
+}
+
+.back_transform {
+  transform: translate(0) ;
+  transition: transform 0.5s;
+}
+
+.role_icon {
+  font-size: 2.5rem;
+}
+
+.role h3 {
+  font-size: 3.6rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.role p,
+.back ul li {
+  font-size: 0.8rem;
+  font-weight: 200;
+  line-height: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.role button {
+  width: fit-content;
+  background-color: transparent;
+  color: var(--red);
+  border: none;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 1rem;
+}
+
+button:hover {
+  transform: scale(1.3);
+}
+
+#over, #over button {
+  color: var(--grey);
+}
+
+.start {
+  font-size: 200px;
+}
+
+.birthday {
+  padding: 0;
+  background: white;
+}
+
+#timer {
+  display: none;
+}
+
+.birthday img {
+  object-fit:scale-down;
+  height: 100%;
+}
+
+.back p {
+  font-size: large;
+  font-weight: 700;
+}
+
+.red {
+  background-color: var(--red);
+  
+}
+
+.red .front, .red .front button {
+  color: var(--grey);
+}
+
+.red button {
+  color: white;
+}
